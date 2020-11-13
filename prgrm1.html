@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <title>Calculator</title>
+        <style type="text/css">
+        table, th, td {
+
+        border: 1px solid black;
+        background: lightblue;
+        border-collapse: collapse;
+
+        }
+        button{
+
+        width: 100%;
+
+        }
+        </style>
+
+    </head>
+<body>
+
+    <center>
+    <table>
+
+        <tr><th colspan="5"><b>SIMPLE CALCULATOR</b></th></tr>
+        <tr><th>Value1 </th><td><input type="text" id="value1"></td>
+
+        <th>Value2 </th><td><input type="text" id="value2"></td></tr>
+
+        <tr><td><button onclick="calc(this.id)" id='add'>Sum</button></td>
+
+        <td><button onclick="calc(this.id)" id='sub'>Difference</button></td>
+
+        <td><button onclick="calc(this.id)" id='pro'>Product</button></td>
+
+        <td><button onclick="calc(this.id)" id='div'>Quotient</button></td>
+        <td><button onclick="calc(this.id)" id='mod'>Modulus</button></td></tr>
+
+        <tr><th>Answer </th><td><input type="text" id="res">
+
+        </td><td colspan="3"><button onclick="calc(this.id)" id='clr'>Clear</button></td></tr>
+
+    </table>
+    </center>
+<script type="text/javascript">
+    function calc(clicked_id)
+    {
+
+    var a=parseFloat(document.getElementById('value1').value);
+
+    var b=parseFloat(document.getElementById('value2').value);
+
+        if(clicked_id=='clr')
+        {
+
+        value1.value="0";
+        value2.value="0";
+        res.value="";
+        }
+        else if(isNaN(a)|isNaN(b))
+        {
+        window.alert("ENTER VALID NUMBER!!");
+        }
+        else
+        {
+        if(clicked_id=='add')
+        document.getElementById('res').value=a+b;
+        if(clicked_id=='sub')
+        document.getElementById('res').value=a-b;
+        if(clicked_id=='pro')
+        document.getElementById('res').value=a*b;
+        if(clicked_id=='div')
+        document.getElementById('res').value=a/b;
+        if(clicked_id=='mod')
+        document.getElementById('res').value=a%b;
+        }
+
+    }
+</script>
+
+</body>
+</html>
